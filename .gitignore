@@ -169,3 +169,12 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+
+
+# To ignore Artifacts folder, to not include in the Github repo, 
+artifacts/*
+
+# To ignore the data transformation notebook, as it is LARGE FILE ( Not Being Pushed to Github Repo)
+research/data_transformation.ipynb
+
