@@ -56,7 +56,7 @@ STAGE_NAME = "MODEL TRAINER STAGE"
 try:
     logger.info(f"Starting {STAGE_NAME}")
     model_training_pipeline = ModelTrainingPipeline()
-    model_training_pipeline.main(training_data_name = 'train')
+    model_training_pipeline.main(training_data_name = 'test')
     logger.info(f"Completed the  {STAGE_NAME}")
     
 except Exception as e:

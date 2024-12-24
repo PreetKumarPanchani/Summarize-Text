@@ -28,7 +28,6 @@ async def training():
         return Response(f"Error Occurred! {e}")
     
 
-
 @app.post("/predict")
 async def predict_route(text):
     try:
