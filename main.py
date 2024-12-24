@@ -1,9 +1,8 @@
 from TextSummarizer.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
 from TextSummarizer.pipeline.stage_02_data_validation import DataValidationTrainingPipeline
 from TextSummarizer.pipeline.stage_03_data_transformation import DataTransformationTrainingPipeline
-from TextSummarizer.pipeline.stage_04_model_trainer import ModelTrainingPipeline
 from TextSummarizer.pipeline.stage_05_model_evaluation import ModelEvaluationPipeline
-
+from TextSummarizer.pipeline.stage_04_model_trainer import ModelTrainingPipeline
 from TextSummarizer.logging import logger
 
 
@@ -62,7 +61,6 @@ try:
 except Exception as e:
     logger.exception(e)
     raise e
-
 
 
 
