@@ -1,0 +1,29 @@
+# config/config.yaml
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data-ingestion
+  source_url: https://github.com/entbappy/Branching-tutorial/raw/master/summarizer-data.zip
+  local_data_file: artifacts/data-ingestion/data.zip
+  unzip_dir: artifacts/data-ingestion
+
+
+data_validation:
+  root_dir: artifacts/data_validation
+  STATUS_FILE: "artifacts/data_validation/status.txt"
+  ALL_REQUIRED_FILES: ["train" , "test" , "validation"]
+
+
+data_transformation:
+  root_dir: artifacts/data_transformation
+  data_path: artifacts/data-ingestion/samsum_dataset
+  tokenizer_name : Overglitch/pegasus-cnn-dailymail
+
+
+model_trainer:
+  root_dir: artifacts/model_trainer
+  data_path: artifacts/data_transformation/samsum_dataset
+  model_ckpt : Overglitch/pegasus-cnn-dailymail
+
+
+
