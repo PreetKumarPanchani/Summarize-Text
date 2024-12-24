@@ -14,7 +14,7 @@ from pathlib import Path
 
 from TextSummarizer.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH
 from TextSummarizer.utils.common import *
-from TextSummarizer.entity import ( DataIngestionConfig, DataValidationConfig, DataTransformationConfig , ModelTrainerConfig) 
+from TextSummarizer.entity import ( DataIngestionConfig, DataValidationConfig, DataTransformationConfig , ModelTrainerConfig, ModelEvaluationConfig) 
 
 
 class ConfigManager:
@@ -108,6 +108,27 @@ class ConfigManager:
         )
 
         return model_trainer_config
+
+
+
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+          
+        config = self.config.model_trainer
+        
+        create_directries([config.root_dir])
+
+        model_evaluation_config = ModelEvaluationConfig( 
+    
+            root_dir   =  config.root_dir, 
+            data_path  = config.data_path ,
+            model_path = config.model_path ,
+
+            tokenizer_path =  config.tokenizer_path,
+            metric_file_name  = config.metric_file_name ,
+
+        )
+
+        return model_evaluation_config
 
 
 
